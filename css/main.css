@@ -20,7 +20,6 @@ body {
   font-size: 15px;
   font-weight: 300;
   margin: 14px 10px;
-  -webkit-font-smoothing: antialiased;
   display: inline-block;
 }
 
@@ -57,23 +56,37 @@ body {
 
 /* Horizontal image gallery */
 .gallery {
-  max-width: 1140px;
-  margin: 25px auto;
-  text-align: center;
-}
-
-.gallery ul {
-  list-style-type: none;
-  padding: 0;
   overflow-x: scroll;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
+  margin-bottom: 25px;
 }
 
-.gallery ul li {
-  display: inline;
-}
-
-.gallery ul li img {
+/* I want to have neighboring images peek through.
+   All <img> elements underneath .gallery
+   are shrunk to 90% width. */
+.gallery > img {
   width: 90%;
+}
+
+.gallery::-webkit-scrollbar { 
+  display: none; 
+}
+
+.spacer {
+  margin-top: 25px;
+}
+
+.cast-pics {
+  float: left;
+  padding-right: 10px;
+}
+
+.cast-character {
+  font-size: 12px;
+  margin-top: -10px;
+}
+
+.center {
+  text-align: center;
 }
